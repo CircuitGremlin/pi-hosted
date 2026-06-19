@@ -3,6 +3,65 @@
 	"templates": [
 		{
 			"categories": [
+				"Databases",
+				"Tools"
+			],
+			"description": "An Enhanced drop in replacement for Mysql",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "",
+					"label": "MYSQL_ROOT_PASSWORD",
+					"name": "MYSQL_ROOT_PASSWORD"
+				},
+				{
+					"default": "",
+					"label": "MySQL database",
+					"name": "MYSQL_DATABASE"
+				},
+				{
+					"default": "",
+					"label": "MySQL user",
+					"name": "MYSQL_USER"
+				},
+				{
+					"default": "",
+					"label": "MySQL password",
+					"name": "MYSQL_PASSWORD"
+				}
+			],
+			"image": "linuxserver/mariadb:arm64v8-latest",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/mariadb-icon.png",
+			"name": "mariadb",
+			"officialDoc": "https://docs.linuxserver.io/images/docker-mariadb",
+			"platform": "linux",
+			"ports": [
+				"3306:3306/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "MariaDB",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Mariadb",
+					"container": "/config"
+				}
+			],
+			"webpage": "https://mariadb.org/",
+			"id": 116,
+			"note": "<h4>Official Webpage: <a href=\"https://mariadb.org/\" target=\"_blank\">https://mariadb.org/</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.linuxserver.io/images/docker-mariadb\" target=\"_blank\">https://docs.linuxserver.io/images/docker-mariadb</a></h4>"
+		},
+		{
+			"categories": [
 				"Monitor",
 				"Tools"
 			],
