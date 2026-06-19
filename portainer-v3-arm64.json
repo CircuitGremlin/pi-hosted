@@ -23,12 +23,11 @@
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/homer.png",
 			"name": "homer",
 			"note": "<h4>Official Webpage: <a href=\"https://github.com/bastienwirtz/homer\" target=\"_blank\">https://github.com/bastienwirtz/homer</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md\" target=\"_blank\">https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/install_homer.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/install_homer.sh | bash</h4><h4>This container requires a yml file within the config volume. See the documentation here https://github.com/bastienwirtz/homer</h4>",
-			"officialDoc": "https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md",
 			"platform": "linux",
-			"preInstallScript": "install_homer.sh",
 			"ports": [
 				"8902:8080/tcp"
 			],
+			"network": "bridge",
 			"restart_policy": "unless-stopped",
 			"title": "Homer",
 			"type": 1,
@@ -79,15 +78,14 @@
 					"name": "MYSQL_PASSWORD"
 				}
 			],
-			"network": "bridge",
 			"image": "linuxserver/mariadb:arm64v8-latest",
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/mariadb.png",
 			"name": "mariadb",
-			"officialDoc": "https://docs.linuxserver.io/images/docker-mariadb",
 			"platform": "linux",
 			"ports": [
 				"3306:3306/tcp"
 			],
+			"network": "bridge",
 			"restart_policy": "unless-stopped",
 			"title": "MariaDB",
 			"type": 1,
@@ -97,7 +95,6 @@
 					"container": "/config"
 				}
 			],
-			"webpage": "https://mariadb.org/",
 			"id": 116,
 			"note": "<h4>Official Webpage: <a href=\"https://mariadb.org/\" target=\"_blank\">https://mariadb.org</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.linuxserver.io/images/docker-mariadb\" target=\"_blank\">https://docs.linuxserver.io/images/docker-mariadb</a></h4>"
 		},
@@ -131,13 +128,10 @@
 			],
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/rpi_monitor.png",
 			"name": "raspberrypi-docker-monitor",
-			"officialDoc": "https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md",
-			"piHostedDoc": "rpi_docker_monitor.md",
 			"platform": "linux",
 			"ports": [
 				"3000:3000/tcp"
 			],
-			"preInstallScript": "rpi_docker_monitor.sh",
 			"repository": {
 				"stackfile": "stack/raspberrypi-monitoring.yml",
 				"url": "https://github.com/CircuitGremlin/pi-hosted"
@@ -145,7 +139,6 @@
 			"restart_policy": "unless-stopped",
 			"title": "Raspberry Pi Docker Monitor",
 			"type": 3,
-			"webpage": "https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md",
 			"id": 179,
 			"note": "<h4>Original repository from oijkn: <a href=\"https://github.com/oijkn/Docker-Raspberry-PI-Monitoring\" target=\"_blank\">https://github.com/oijkn/Docker-Raspberry-PI-Monitoring</a></h4><h4>Pi-Hosted dedicated documentation: <a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">rpi_docker_monitor.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/rpi_docker_monitor.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/rpi_docker_monitor.sh | bash</h4>"
 		}
