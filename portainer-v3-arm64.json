@@ -218,7 +218,7 @@
 			"image": "hkotel/mealie:latest",
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/mealie.png",
 			"name": "mealie",
-			"note": "<h4>Official Webpage: <a href=\"https://mealie.io\" target=\"_blank\">https://mealie.io</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.mealie.io\" target=\"_blank\">https://docs.mealie.io</a></h4><h4>Default Credentials:</h4><ul><li>Username: changeme@email.com</li><li>Password: MyPassword</li><li>Documentation is Available <a href='https://docs.mealie.io'>here</a></li></ul>",
+			"note": "<h4>Official Webpage: <a href=\"https://mealie.io\" target=\"_blank\">https://mealie.io</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.mealie.io\" target=\"_blank\">https://docs.mealie.io</a></h4>Default Credentials:<ul><li>Username: changeme@email.com</li><li>Password: MyPassword</li><li>Documentation is Available <a href='https://docs.mealie.io'>here</a></li></ul>",
 			"platform": "linux",
 			"ports": [
 				"9925:9000/tcp"
