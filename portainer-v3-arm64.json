@@ -20,7 +20,7 @@
 				},
 				{
 					"default": "",
-					"label": "MYSQL_ROOT_PASSWORD",
+					"label": "MySQL root password",
 					"name": "MYSQL_ROOT_PASSWORD"
 				},
 				{
