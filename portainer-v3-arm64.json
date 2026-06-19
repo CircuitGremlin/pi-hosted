@@ -73,7 +73,7 @@
 				}
 			],
 			"image": "influxdb:2",
-			"logo": "https://raw.githubusercontent.com/docker-library/docs/43d87118415bb75d7bb107683e79cd6d69186f67/influxdb/logo.png",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/influxdb.png",
 			"name": "influxdb2",
 			"note": "<h4>Official Webpage: <a href=\"https://www.influxdata.com/\" target=\"_blank\">https://www.influxdata.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.influxdata.com/influxdb/v2/install/use-docker-compose\" target=\"_blank\">https://docs.influxdata.com/influxdb/v2/install/use-docker-compose</a></h4><h4>Set your initial organisation, bucket, username and password below. Wisit Web UI at http://your_host:8086/ for setting up a tocken.</h4>",
 			"platform": "linux",
