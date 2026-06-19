@@ -39,6 +39,7 @@
 					"name": "MYSQL_PASSWORD"
 				}
 			],
+			"network": "bridge",
 			"image": "linuxserver/mariadb:arm64v8-latest",
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/mariadb-icon.png",
 			"name": "mariadb",
