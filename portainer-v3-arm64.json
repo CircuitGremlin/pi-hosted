@@ -47,7 +47,7 @@
 			"type": 3,
 			"webpage": "https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md",
 			"id": 179,
-			"note": "<b>Original repository from oijkn: <a href=\"https://github.com/oijkn/Docker-Raspberry-PI-Monitoring\" target=\"_blank\">https://github.com/oijkn/Docker-Raspberry-PI-Monitoring</a></b><br><b>Pi-Hosted dedicated documentation: <a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">rpi_docker_monitor.md</a></b><br><b><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/rpi_docker_monitor.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b><br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/rpi_docker_monitor.sh | bash"
+			"note": "<h3>Original repository from oijkn: <a href=\"https://github.com/oijkn/Docker-Raspberry-PI-Monitoring\" target=\"_blank\">https://github.com/oijkn/Docker-Raspberry-PI-Monitoring</a></h3><h3>Pi-Hosted dedicated documentation: <a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">rpi_docker_monitor.md</a></h3><h3><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/rpi_docker_monitor.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </h3><h4>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/rpi_docker_monitor.sh | bash</h4>"
 		}
 	]
 }
