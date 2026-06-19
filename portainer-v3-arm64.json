@@ -22,7 +22,7 @@
 			"image": "b4bz/homer:latest",
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/homer.png",
 			"name": "homer",
-			"note": "<h4>Official Webpage: <a href=\"https://github.com/bastienwirtz/homer\" target=\"_blank\">https://github.com/bastienwirtz/homer</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md\" target=\"_blank\">https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/install_homer.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/install_homer.sh | bash</h4><h4>This container requires a yml file within the config volume. See the documentation here https://github.com/bastienwirtz/homer</h4>",
+			"note": "<h4>Official Webpage: <a href=\"https://github.com/bastienwirtz/homer\" target=\"_blank\">https://github.com/bastienwirtz/homer</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md\" target=\"_blank\">https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/install_homer.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/install_homer.sh | bash</h4><h4>This container requires a yml file within the config volume. See the documentation.</h4>",
 			"platform": "linux",
 			"ports": [
 				"8902:8080/tcp"
@@ -37,8 +37,7 @@
 					"container": "/www/assets"
 				}
 			],
-			"webpage": "https://github.com/bastienwirtz/homer",
-			"id": 87
+			"webpage": "https://github.com/bastienwirtz/homer"
 		},
 		{
 			"categories": [
@@ -95,7 +94,6 @@
 					"container": "/config"
 				}
 			],
-			"id": 116,
 			"note": "<h4>Official Webpage: <a href=\"https://mariadb.org/\" target=\"_blank\">https://mariadb.org</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.linuxserver.io/images/docker-mariadb\" target=\"_blank\">https://docs.linuxserver.io/images/docker-mariadb</a></h4>"
 		},
 		{
@@ -139,8 +137,31 @@
 			"restart_policy": "unless-stopped",
 			"title": "Raspberry Pi Docker Monitor",
 			"type": 3,
-			"id": 179,
 			"note": "<h4>Original repository from oijkn: <a href=\"https://github.com/oijkn/Docker-Raspberry-PI-Monitoring\" target=\"_blank\">https://github.com/oijkn/Docker-Raspberry-PI-Monitoring</a></h4><h4>Pi-Hosted dedicated documentation: <a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">rpi_docker_monitor.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/rpi_docker_monitor.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/rpi_docker_monitor.sh | bash</h4>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Snippet Box is a simple self-hosted app for organizing your code snippets.",
+			"image": "pawelmalak/snippet-box:arm",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/snibox.png",
+			"name": "Snippet-box",
+			"note": "<h4>Official Webpage: <a href=\"https://github.com/pawelmalak/snippet-box\" target=\"_blank\">https://github.com/pawelmalak/snippet-box</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/pawelmalak/snippet-box#with-docker\" target=\"_blank\">https://github.com/pawelmalak/snippet-box#with-docker</a></h4>",
+			"platform": "linux",
+			"ports": [
+				"5010:5000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Snippet-box",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Snippet-box",
+					"container": "/app/data"
+				}
+			]
 		}
 	]
 }
