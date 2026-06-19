@@ -41,6 +41,61 @@
 		},
 		{
 			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "InfluxDB is an open source time series database for recording metrics, events, and analytics.",
+			"env": [
+				{
+					"default": "setup",
+					"label": "Initial mode",
+					"name": "DOCKER_INFLUXDB_INIT_MODE"
+				},
+				{
+					"default": "",
+					"label": "Initial username",
+					"name": "DOCKER_INFLUXDB_INIT_USERNAME"
+				},
+				{
+					"default": "",
+					"label": "Initial password",
+					"name": "DOCKER_INFLUXDB_INIT_PASSWORD"
+				},
+				{
+					"default": "",
+					"label": "Initial organisation",
+					"name": "DOCKER_INFLUXDB_INIT_ORG"
+				},
+				{
+					"default": "",
+					"label": "Initial bucket",
+					"name": "DOCKER_INFLUXDB_INIT_BUCKET"
+				}
+			],
+			"image": "influxdb:2",
+			"logo": "https://raw.githubusercontent.com/docker-library/docs/43d87118415bb75d7bb107683e79cd6d69186f67/influxdb/logo.png",
+			"name": "influxdb2",
+			"note": "<h4>Official Webpage: <a href=\"https://www.influxdata.com/\" target=\"_blank\">https://www.influxdata.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.influxdata.com/influxdb/v2/install/use-docker-compose\" target=\"_blank\">https://docs.influxdata.com/influxdb/v2/install/use-docker-compose</a></h4><h4>Set your initial organisation, bucket, username and password below. Wisit Web UI at http://your_host:8086/ for setting up a tocken.</h4>",
+			"platform": "linux",
+			"ports": [
+				"8086:8086/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Influxdb 2",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Influxdb2/data",
+					"container": "/var/lib/influxdb2"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Influxdb2/config",
+					"container": "/etc/influxdb2"
+				}
+			]
+		},
+		{
+			"categories": [
 				"Databases",
 				"Tools"
 			],
