@@ -58,7 +58,7 @@
 			],
 			"webpage": "https://mariadb.org/",
 			"id": 116,
-			"note": "<h4>Official Webpage: <a href=\"https://mariadb.org/\" target=\"_blank\">https://mariadb.org/</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.linuxserver.io/images/docker-mariadb\" target=\"_blank\">https://docs.linuxserver.io/images/docker-mariadb</a></h4>"
+			"note": "<h4>Official Webpage: <a href=\"https://mariadb.org/\" target=\"_blank\">https://mariadb.org</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.linuxserver.io/images/docker-mariadb\" target=\"_blank\">https://docs.linuxserver.io/images/docker-mariadb</a></h4>"
 		},
 		{
 			"categories": [
