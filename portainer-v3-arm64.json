@@ -211,8 +211,8 @@
 					"name": "PGID"
 				},
 				{
-					"default": "America/New_York",
-					"label": "TZ",
+					"default": "Europe/Zurich",
+					"label": "Timezone",
 					"name": "TZ"
 				},
 				{
@@ -289,8 +289,8 @@
 					"name": "ServerIP"
 				},
 				{
-					"default": "Europe\\London",
-					"label": "TZ",
+					"default": "Europe/Zurich",
+					"label": "Timezone",
 					"name": "TZ"
 				},
 				{
