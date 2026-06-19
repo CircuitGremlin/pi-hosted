@@ -153,6 +153,7 @@
 			"ports": [
 				"5010:5000/tcp"
 			],
+			"network": "bridge",
 			"restart_policy": "unless-stopped",
 			"title": "Snippet-box",
 			"type": 1,
