@@ -2,16 +2,23 @@
 	"version": "3",
 	"templates": [
 		{
-			"categories": [
-				"Other",
-				"Tools"
-			],
+			"type": 1,
+			"title": "Adguardhome",
 			"description": "AdGuard Home is a network-wide software for blocking ads & tracking.",
 			"image": "adguard/adguardhome:latest",
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/adguardhome.png",
 			"name": "Adguardhome",
-			"note": "<h4>Official Webpage: <a href=\"https://adguard.com/en/adguard-home/overview.html\" target=\"_blank\">https://adguard.com/en/adguard-home/overview.html</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/AdguardTeam/AdGuardHome/wiki/Docker\" target=\"_blank\">https://github.com/AdguardTeam/AdGuardHome/wiki/Docker</a></h4>",
-			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/adguardhome.png",
+			"network": "bridge",
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/AdguardHome/config",
+					"container": "/opt/adguardhome/conf"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/AdguardHome/work",
+					"container": "/opt/adguardhome/work"
+				}
+			],
 			"ports": [
 				"53:53/tcp",
 				"53:53/udp",
@@ -27,28 +34,22 @@
 				"5443:5443/tcp",
 				"5443:5443/udp"
 			],
-			"network": "bridge",
 			"restart_policy": "unless-stopped",
-  			"hostname": "rpi-adguardhome",
-			"title": "Adguardhome",
-			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/AdguardHome/config",
-					"container": "/opt/adguardhome/conf"
-				},
-				{
-					"bind": "/portainer/Files/AppData/Config/AdguardHome/work",
-					"container": "/opt/adguardhome/work"
-				}
-			]
-		},
-		{
+			"hostname": "rpi-adguardhome",
+			"note": "<h4>Official Webpage: <a href=\"https://adguard.com/en/adguard-home/overview.html\" target=\"_blank\">https://adguard.com/en/adguard-home/overview.html</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/AdguardTeam/AdGuardHome/wiki/Docker\" target=\"_blank\">https://github.com/AdguardTeam/AdGuardHome/wiki/Docker</a></h4>",
+			"platform": "linux",
 			"categories": [
 				"Other",
 				"Tools"
-			],
+			]
+		},
+		{
+			"type": 1,
+			"title": "Homer",
 			"description": "A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.",
+			"image": "b4bz/homer:latest",
+			"name": "homer",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/homer.png",
 			"env": [
 				{
 					"default": "1000",
@@ -61,33 +62,32 @@
 					"name": "UID"
 				}
 			],
-			"image": "b4bz/homer:latest",
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/homer.png",
-			"name": "homer",
-			"note": "<h4>Official Webpage: <a href=\"https://github.com/bastienwirtz/homer\" target=\"_blank\">https://github.com/bastienwirtz/homer</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md\" target=\"_blank\">https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/install_homer.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/install_homer.sh | bash</h4><h4>This container requires a yml file within the config volume. See the documentation.</h4>",
-			"platform": "linux",
-			"ports": [
-				"8902:8080/tcp"
-			],
 			"network": "bridge",
-			"restart_policy": "unless-stopped",
-  			"hostname": "rpi-homer",
-			"title": "Homer",
-			"type": 1,
 			"volumes": [
 				{
 					"bind": "/portainer/Files/AppData/Config/Homer/assets",
 					"container": "/www/assets"
 				}
 			],
-			"webpage": "https://github.com/bastienwirtz/homer"
+			"ports": [
+				"8902:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"hostname": "rpi-homer",
+			"note": "<h4>Official Webpage: <a href=\"https://github.com/bastienwirtz/homer\" target=\"_blank\">https://github.com/bastienwirtz/homer</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md\" target=\"_blank\">https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/install_homer.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/install_homer.sh | bash</h4><h4>This container requires a yml file within the config volume. See the documentation.</h4>",
+			"platform": "linux",
+			"categories": [
+				"Other",
+				"Tools"
+			]
 		},
 		{
-			"categories": [
-				"Databases",
-				"Tools"
-			],
+			"type": 1,
+			"title": "Influxdb 2",
 			"description": "InfluxDB is an open source time series database for recording metrics, events, and analytics.",
+			"image": "influxdb:2",
+			"name": "influxdb2",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/influxdb.png",
 			"env": [
 				{
 					"default": "setup",
@@ -115,19 +115,7 @@
 					"name": "DOCKER_INFLUXDB_INIT_BUCKET"
 				}
 			],
-			"image": "influxdb:2",
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/influxdb.png",
-			"name": "influxdb2",
-			"note": "<h4>Official Webpage: <a href=\"https://www.influxdata.com/\" target=\"_blank\">https://www.influxdata.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.influxdata.com/influxdb/v2/install/use-docker-compose\" target=\"_blank\">https://docs.influxdata.com/influxdb/v2/install/use-docker-compose</a></h4><h4>Set your initial organisation, bucket, username and password below. Wisit Web UI at http://your_host:8086/ for setting up a tocken.</h4>",
-			"platform": "linux",
-			"ports": [
-				"8086:8086/tcp"
-			],
 			"network": "bridge",
-			"restart_policy": "unless-stopped",
-  			"hostname": "rpi-influxdb2",
-			"title": "Influxdb 2",
-			"type": 1,
 			"volumes": [
 				{
 					"bind": "/portainer/Files/AppData/Config/Influxdb2/data",
@@ -137,14 +125,26 @@
 					"bind": "/portainer/Files/AppData/Config/Influxdb2/config",
 					"container": "/etc/influxdb2"
 				}
-			]
-		},
-		{
+			],
+			"ports": [
+				"8086:8086/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"hostname": "rpi-influxdb2",
+			"note": "<h4>Official Webpage: <a href=\"https://www.influxdata.com/\" target=\"_blank\">https://www.influxdata.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.influxdata.com/influxdb/v2/install/use-docker-compose\" target=\"_blank\">https://docs.influxdata.com/influxdb/v2/install/use-docker-compose</a></h4><h4>Set your initial organisation, bucket, username and password below. Wisit Web UI at http://your_host:8086/ for setting up a tocken.</h4>",
+			"platform": "linux",
 			"categories": [
 				"Databases",
 				"Tools"
-			],
+			]
+		},
+		{
+			"type": 1,
+			"title": "MariaDB",
 			"description": "An Enhanced drop in replacement for Mysql",
+			"image": "linuxserver/mariadb:arm64v8-latest",
+			"name": "mariadb",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/mariadb.png",
 			"env": [
 				{
 					"default": "1000",
@@ -177,32 +177,32 @@
 					"name": "MYSQL_PASSWORD"
 				}
 			],
-			"image": "linuxserver/mariadb:arm64v8-latest",
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/mariadb.png",
-			"name": "mariadb",
-			"platform": "linux",
-			"ports": [
-				"3306:3306/tcp"
-			],
 			"network": "bridge",
-			"restart_policy": "unless-stopped",
-  			"hostname": "rpi-mariadb",
-			"title": "MariaDB",
-			"type": 1,
 			"volumes": [
 				{
 					"bind": "/portainer/Files/AppData/Config/Mariadb",
 					"container": "/config"
 				}
 			],
-			"note": "<h4>Official Webpage: <a href=\"https://mariadb.org/\" target=\"_blank\">https://mariadb.org</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.linuxserver.io/images/docker-mariadb\" target=\"_blank\">https://docs.linuxserver.io/images/docker-mariadb</a></h4>"
+			"ports": [
+				"3306:3306/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"hostname": "rpi-mariadb",
+			"note": "<h4>Official Webpage: <a href=\"https://mariadb.org/\" target=\"_blank\">https://mariadb.org</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.linuxserver.io/images/docker-mariadb\" target=\"_blank\">https://docs.linuxserver.io/images/docker-mariadb</a></h4>",
+			"platform": "linux",
+			"categories": [
+				"Databases",
+				"Tools"
+			]
 		},
 		{
-			"categories": [
-				"Database",
-				"Tools"
-			],
+			"type": 1,
+			"title": "Mealie",
 			"description": "A self-hosted recipe manager and meal planner",
+			"image": "hkotel/mealie:latest",
+			"name": "mealie",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/mealie.png",
 			"env": [
 				{
 					"default": "1000",
@@ -260,32 +260,32 @@
 					"name": "RECIPE_DISABLE_AMOUNT"
 				}
 			],
-			"image": "hkotel/mealie:latest",
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/mealie.png",
-			"name": "mealie",
-			"note": "<h4>Official Webpage: <a href=\"https://mealie.io\" target=\"_blank\">https://mealie.io</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.mealie.io\" target=\"_blank\">https://docs.mealie.io</a></h4>Default Credentials:<br>&nbsp;&nbsp;- Username: changeme@email.com<br>&nbsp;&nbsp;- Password: MyPassword",
-			"platform": "linux",
-			"ports": [
-				"9925:9000/tcp"
-			],
 			"network": "bridge",
-			"restart_policy": "unless-stopped",
-  			"hostname": "rpi-mealie",
-			"title": "Mealie",
-			"type": 1,
 			"volumes": [
 				{
 					"bind": "/portainer/Files/AppData/Config/mealie",
 					"container": "/app/data"
 				}
+			],
+			"ports": [
+				"9925:9000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"hostname": "rpi-mealie",
+			"note": "<h4>Official Webpage: <a href=\"https://mealie.io\" target=\"_blank\">https://mealie.io</a></h4><h4>Official Docker Documentation: <a href=\"https://docs.mealie.io\" target=\"_blank\">https://docs.mealie.io</a></h4>Default Credentials:<br>&nbsp;&nbsp;- Username: changeme@email.com<br>&nbsp;&nbsp;- Password: MyPassword",
+			"platform": "linux",
+			"categories": [
+				"Database",
+				"Tools"
 			]
 		},
 		{
-			"categories": [
-				"Other",
-				"Tools"
-			],
+			"type": 1,
+			"title": "Pi-Hole-Unbound",
 			"description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole. This version has Ubound software installed on it so you don't need to rely on external DNS providers.",
+			"image": "mpgirro/pihole-unbound",
+			"name": "pihole-unbound",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/pihole-unbound.png",
 			"env": [
 				{
 					"default": "Europe/Zurich",
@@ -381,22 +381,7 @@
 					"name": "FTLCONF_dns_upstreams"
 				}
 			],
-			"image": "mpgirro/pihole-unbound",
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/pihole-unbound.png",
-			"name": "pihole-unbound",
-			"note": "<h4>Official Webpage: <a href=\"https://pi-hole.net/\" target=\"_blank\">https://pi-hole.net/</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/mpgirro/docker-pihole-unbound\" target=\"_blank\">https://github.com/mpgirro/docker-pihole-unbound</a></h4><h4>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/pi-hole.md\" target=\"_blank\">pi-hole.md</a></h4>When the installation is complete, navigate to your.ip.goes.here:1010/admin.<br>Follow the article <a href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'>here</a> if you run into issues binding to port 53.<br><br>You can add ports:<br>&nbsp;&nbsp;- 5335 to access Ubound externally<br>&nbsp;&nbsp;- 22 to enable SSH<br>&nbsp;&nbsp;- 67 to use DHCP Server<br>Add those ports in Show advanced options.",
-			"platform": "linux",
-			"ports": [
-				"53:53/tcp",
-				"53:53/udp",
-				"1010:80/tcp",
-				"4443:443/tcp"
-			],
 			"network": "bridge",
-			"restart_policy": "unless-stopped",
-  			"hostname": "rpi-pihole",
-			"title": "Pi-Hole-Unbound",
-			"type": 1,
 			"volumes": [
 				{
 					"bind": "/portainer/Files/AppData/Config/PiHole-Unbound",
@@ -406,14 +391,32 @@
 					"bind": "/portainer/Files/AppData/Config/PiHole-Unbound/DNS",
 					"container": "/etc/dnsmasq.d"
 				}
+			],
+			"ports": [
+				"53:53/tcp",
+				"53:53/udp",
+				"1010:80/tcp",
+				"4443:443/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"hostname": "rpi-pihole-unbound",
+			"note": "<h4>Official Webpage: <a href=\"https://pi-hole.net/\" target=\"_blank\">https://pi-hole.net/</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/mpgirro/docker-pihole-unbound\" target=\"_blank\">https://github.com/mpgirro/docker-pihole-unbound</a></h4><h4>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/pi-hole.md\" target=\"_blank\">pi-hole.md</a></h4>When the installation is complete, navigate to your.ip.goes.here:1010/admin.<br>Follow the article <a href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'>here</a> if you run into issues binding to port 53.<br><br>You can add ports:<br>&nbsp;&nbsp;- 5335 to access Ubound externally<br>&nbsp;&nbsp;- 22 to enable SSH<br>&nbsp;&nbsp;- 67 to use DHCP Server<br>Add those ports in Show advanced options.",
+			"platform": "linux",
+			"categories": [
+				"Other",
+				"Tools"
 			]
 		},
 		{
-			"categories": [
-				"Monitor",
-				"Tools"
-			],
+			"type": 3,
+			"title": "Raspberry Pi Docker Monitor",
 			"description": "Monitor your Raspberry Pi and Dockers using Grafana developed by oijkn.",
+			"repository": {
+				"stackfile": "stack/raspberrypi-monitoring.yml",
+				"url": "https://github.com/CircuitGremlin/pi-hosted"
+			},
+			"name": "raspberrypi-docker-monitor",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/rpi_monitor.png",
 			"env": [
 				{
 					"default": "1y",
@@ -436,45 +439,37 @@
 					"name": "GF_SECURITY_ADMIN_PASSWORD"
 				}
 			],
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/rpi_monitor.png",
-			"name": "raspberrypi-docker-monitor",
+			"note": "<h4>Original repository from oijkn: <a href=\"https://github.com/oijkn/Docker-Raspberry-PI-Monitoring\" target=\"_blank\">https://github.com/oijkn/Docker-Raspberry-PI-Monitoring</a></h4><h4>Pi-Hosted dedicated documentation: <a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">rpi_docker_monitor.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/rpi_docker_monitor.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/rpi_docker_monitor.sh | bash</h4>",
 			"platform": "linux",
-			"ports": [
-				"3000:3000/tcp"
-			],
-			"repository": {
-				"stackfile": "stack/raspberrypi-monitoring.yml",
-				"url": "https://github.com/CircuitGremlin/pi-hosted"
-			},
-			"restart_policy": "unless-stopped",
-			"title": "Raspberry Pi Docker Monitor",
-			"type": 3,
-			"note": "<h4>Original repository from oijkn: <a href=\"https://github.com/oijkn/Docker-Raspberry-PI-Monitoring\" target=\"_blank\">https://github.com/oijkn/Docker-Raspberry-PI-Monitoring</a></h4><h4>Pi-Hosted dedicated documentation: <a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">rpi_docker_monitor.md</a></h4><h4><a href=\"https://github.com/CircuitGremlin/pi-hosted/blob/master/tools/rpi_docker_monitor.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install:<br>wget -qO- https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/tools/rpi_docker_monitor.sh | bash</h4>"
+			"categories": [
+				"Monitor",
+				"Tools"
+			]
 		},
 		{
-			"categories": [
-				"Other",
-				"Tools"
-			],
+			"type": 1,
+			"title": "Snippet-box",
 			"description": "Snippet Box is a simple self-hosted app for organizing your code snippets.",
 			"image": "pawelmalak/snippet-box:arm",
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/snibox.png",
 			"name": "Snippet-box",
-			"note": "<h4>Official Webpage: <a href=\"https://github.com/pawelmalak/snippet-box\" target=\"_blank\">https://github.com/pawelmalak/snippet-box</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/pawelmalak/snippet-box#with-docker\" target=\"_blank\">https://github.com/pawelmalak/snippet-box#with-docker</a></h4>",
-			"platform": "linux",
-			"ports": [
-				"5010:5000/tcp"
-			],
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/snibox.png",
 			"network": "bridge",
-			"restart_policy": "unless-stopped",
-  			"hostname": "rpi-snippetbox",
-			"title": "Snippet-box",
-			"type": 1,
 			"volumes": [
 				{
 					"bind": "/portainer/Files/AppData/Config/Snippet-box",
 					"container": "/app/data"
 				}
+			],
+			"ports": [
+				"5010:5000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"hostname": "rpi-snippetbox",
+			"note": "<h4>Official Webpage: <a href=\"https://github.com/pawelmalak/snippet-box\" target=\"_blank\">https://github.com/pawelmalak/snippet-box</a></h4><h4>Official Docker Documentation: <a href=\"https://github.com/pawelmalak/snippet-box#with-docker\" target=\"_blank\">https://github.com/pawelmalak/snippet-box#with-docker</a></h4>",
+			"platform": "linux",
+			"categories": [
+				"Other",
+				"Tools"
 			]
 		}
 	]
