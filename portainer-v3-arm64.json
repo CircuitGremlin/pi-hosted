@@ -336,69 +336,6 @@
 							"value": "lcars"
 						}
 					]
-				},
-				{
-					"label": "Pi-hole listening mode",
-					"name": "FTLCONF_dns_listeningMode",
-					"select": [
-						{
-							"default": true,
-							"text": "Allow only local requests",
-							"value": "LOCAL"
-						},
-						{
-							"text": "Permit all origins, accept only on the specified interface",
-							"value": "SINGLE"
-						},
-						{
-							"text": "By default, FTL binds the wildcard address",
-							"value": "BIND"
-						},
-						{
-							"text": "Permit all origins, accept on all interfaces",
-							"value": "ALL"
-						}
-					]
-				},
-				{
-					"default": "eth0",
-					"label": "Interface to use for DNS",
-					"name": "FTLCONF_dns_interface"
-				},
-				{
-					"label": "Use DNSSEC",
-					"name": "FTLCONF_dns_dnssec",
-					"select": [
-						{
-							"default": true,
-							"text": "Enable",
-							"value": "true"
-						},
-						{
-							"text": "Disable",
-							"value": "false"
-						}
-					]
-				},
-				{
-					"default": "pihole.local",
-					"label": "Respond with",
-					"name": "FTLCONF_dns_piholePTR"
-				},
-				{
-					"default": "",
-					"label": "The DNS domain used by your Pi-hole",
-					"name": "FTLCONF_dns_domain_name"
-				},
-				{
-					"default": "true,192.168.x.0/16,192.168.x.1,lan",
-					"label": "Reverse server",
-					"name": "FTLCONF_dns_revServers"
-				},
-				{
-					"default": "127.0.0.1#5335;192.168.x.x",
-					"label": "Upstream DNS server(s), separated by a semicolon",
-					"name": "FTLCONF_dns_upstreams"
 				}
 			],
 			"image": "mpgirro/pihole-unbound",
