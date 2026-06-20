@@ -356,6 +356,11 @@
 					]
 				},
 				{
+					"default": "eth0",
+					"label": "Interface to use for DNS",
+					"name": "FTLCONF_dns_interface"
+				},
+				{
 					"label": "Use DNSSEC",
 					"name": "FTLCONF_dns_dnssec",
 					"select": [
