@@ -342,7 +342,6 @@
 					"name": "FTLCONF_dns_listeningMode",
 					"select": [
 						{
-							"default": true,
 							"text": "Allow only local requests",
 							"value": "LOCAL"
 						},
@@ -355,15 +354,11 @@
 							"value": "BIND"
 						},
 						{
+							"default": true,
 							"text": "Permit all origins, accept on all interfaces",
 							"value": "ALL"
 						}
 					]
-				},
-				{
-					"default": "eth0",
-					"label": "Interface to use for DNS",
-					"name": "FTLCONF_dns_interface"
 				},
 				{
 					"label": "Use DNSSEC",
