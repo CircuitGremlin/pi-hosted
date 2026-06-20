@@ -381,7 +381,7 @@
 					"name": "FTLCONF_dns_revServers"
 				},
 				{
-					"default": "127.0.0.1#5335;192.168.x.x",
+					"default": "127.0.0.1#5335",
 					"label": "Upstream DNS server(s), separated by a semicolon",
 					"name": "FTLCONF_dns_upstreams"
 				}
@@ -404,11 +404,9 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/portainer/Files/AppData/Config/PiHole-Unbound",
 					"container": "/etc/pihole"
 				},
 				{
-					"bind": "/portainer/Files/AppData/Config/PiHole-Unbound/DNS",
 					"container": "/etc/dnsmasq.d"
 				}
 			]
