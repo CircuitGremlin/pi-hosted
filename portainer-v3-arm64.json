@@ -358,14 +358,12 @@
 							"text": "Permit all origins, accept on all interfaces",
 							"value": "ALL"
 						}
-					],
-					"preset": true
+					]
 				},
 				{
 					"default": "eth0",
 					"label": "Interface to use for DNS",
-					"name": "FTLCONF_dns_interface",
-					"preset": true
+					"name": "FTLCONF_dns_interface"
 				},
 				{
 					"label": "Use DNSSEC",
@@ -385,8 +383,7 @@
 				{
 					"default": "pihole.local",
 					"label": "Respond with",
-					"name": "FTLCONF_dns_piholePTR",
-					"preset": true
+					"name": "FTLCONF_dns_piholePTR"
 				},
 				{
 					"default": "true,192.168.x.0/16,192.168.x.1,lan",
@@ -396,8 +393,7 @@
 				{
 					"default": "127.0.0.1#5335;192.168.x.x",
 					"label": "Upstream DNS server(s), separated by a semicolon",
-					"name": "FTLCONF_dns_upstreams",
-					"preset": true
+					"name": "FTLCONF_dns_upstreams"
 				}
 			],
 			"image": "mpgirro/pihole-unbound",
