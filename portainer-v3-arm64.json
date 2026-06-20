@@ -336,6 +336,29 @@
 							"value": "lcars"
 						}
 					]
+				},
+				{
+					"label": "Pi-hole listening mode",
+					"name": "FTLCONF_dns_listeningMode",
+					"select": [
+						{
+							"default": true,
+							"text": "Allow only local requests",
+							"value": "LOCAL"
+						},
+						{
+							"text": "Permit all origins, accept only on the specified interface",
+							"value": "SINGLE"
+						},
+						{
+							"text": "By default, FTL binds the wildcard address",
+							"value": "BIND"
+						},
+						{
+							"text": "Permit all origins, accept on all interfaces",
+							"value": "ALL"
+						}
+					]
 				}
 			],
 			"image": "mpgirro/pihole-unbound",
