@@ -349,7 +349,7 @@
 					"preset": true
 				},
 				{
-					"default": true,
+					"default": "true",
 					"label": "Use DNSSEC",
 					"name": "FTLCONF_dns_dnssec",
 					"preset": true
