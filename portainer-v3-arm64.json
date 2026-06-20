@@ -386,6 +386,11 @@
 					"name": "FTLCONF_dns_piholePTR"
 				},
 				{
+					"default": "",
+					"label": "The DNS domain used by your Pi-hole",
+					"name": "FTLCONF_dns_domain_name"
+				},
+				{
 					"default": "true,192.168.x.0/16,192.168.x.1,lan",
 					"label": "Reverse server",
 					"name": "FTLCONF_dns_revServers"
