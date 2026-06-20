@@ -29,6 +29,7 @@
 			],
 			"network": "bridge",
 			"restart_policy": "unless-stopped",
+  			"hostname": "rpi-adguardhome",
 			"title": "Adguardhome",
 			"type": 1,
 			"volumes": [
@@ -70,6 +71,7 @@
 			],
 			"network": "bridge",
 			"restart_policy": "unless-stopped",
+  			"hostname": "rpi-homer",
 			"title": "Homer",
 			"type": 1,
 			"volumes": [
@@ -123,6 +125,7 @@
 			],
 			"network": "bridge",
 			"restart_policy": "unless-stopped",
+  			"hostname": "rpi-influxdb2",
 			"title": "Influxdb 2",
 			"type": 1,
 			"volumes": [
@@ -183,6 +186,7 @@
 			],
 			"network": "bridge",
 			"restart_policy": "unless-stopped",
+  			"hostname": "rpi-mariadb",
 			"title": "MariaDB",
 			"type": 1,
 			"volumes": [
@@ -266,6 +270,7 @@
 			],
 			"network": "bridge",
 			"restart_policy": "unless-stopped",
+  			"hostname": "rpi-mealie",
 			"title": "Mealie",
 			"type": 1,
 			"volumes": [
@@ -283,41 +288,115 @@
 			"description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole. This version has Ubound software installed on it so you don't need to rely on external DNS providers.",
 			"env": [
 				{
-					"default": "192.168.0.X",
-					"description": "Insert the Raspberry Pi IP here",
-					"label": "ServerIP",
-					"name": "ServerIP"
-				},
-				{
 					"default": "Europe/Zurich",
 					"label": "Timezone",
 					"name": "TZ"
 				},
 				{
-					"label": "DNSSEC",
-					"name": "DNSSEC",
+					"default": "",
+					"label": "Pi-hole webserver password",
+					"name": "FTLCONF_webserver_api_password"
+				},
+				{
+					"default": "1010",
+					"label": "Pi-hole webserver port",
+					"name": "FTLCONF_webserver_port"
+				},
+				{
+					"label": "Pi-hole webserver theme",
+					"name": "FTLCONF_webserver_interface_theme",
 					"select": [
 						{
 							"default": true,
-							"text": "Enable DNSSEC",
+							"text": "Pi-hole auto",
+							"value": "default-auto"
+						},
+						{
+							"text": "Pi-hole day",
+							"value": "default-light"
+						},
+						{
+							"text": "Pi-hole midnight",
+							"value": "default-dark"
+						},
+						{
+							"text": "Pi-hole deep-midnight",
+							"value": "default-darker"
+						},
+						{
+							"text": "High-contrast light",
+							"value": "high-contrast"
+						},
+						{
+							"text": "High-contrast dark",
+							"value": "high-contrast-dark"
+						},
+						{
+							"text": "Star Trek LCARS",
+							"value": "lcars"
+						}
+					]
+				},
+				{
+					"label": "Pi-hole listening mode",
+					"name": "FTLCONF_dns_listeningMode",
+					"select": [
+						{
+							"default": true,
+							"text": "Allow only local requests",
+							"value": "LOCAL"
+						},
+						{
+							"text": "Permit all origins, accept only on the specified interface",
+							"value": "SINGLE"
+						},
+						{
+							"text": "By default, FTL binds the wildcard address",
+							"value": "BIND"
+						},
+						{
+							"text": "Permit all origins, accept on all interfaces",
+							"value": "ALL"
+						}
+					],
+					"preset": true
+				},
+				{
+					"default": "eth0",
+					"label": "Interface to use for DNS",
+					"name": "FTLCONF_dns_interface",
+					"preset": true
+				},
+				{
+					"label": "Use DNSSEC",
+					"name": "FTLCONF_dns_dnssec",
+					"select": [
+						{
+							"default": true,
+							"text": "Enable",
 							"value": "true"
 						},
 						{
-							"text": "Disable DNSSEC",
+							"text": "Disable",
 							"value": "false"
 						}
 					]
 				},
 				{
-					"default": "127.0.0.1#5335",
-					"label": "DNS1",
-					"name": "DNS1",
+					"default": "pihole.local",
+					"label": "Respond with",
+					"name": "FTLCONF_dns_piholePTR",
 					"preset": true
 				},
 				{
-					"default": "127.0.0.1#5335",
-					"label": "DNS2",
-					"name": "DNS2",
+					"default": "true,192.168.x.0/16,192.168.x.1,lan",
+					"label": "Reverse server",
+					"name": "FTLCONF_dns_revServers"
+				},
+				{
+					"default": "127.0.0.1#5335;192.168.x.x",
+					"label": "Upstream DNS server(s), separated by a semicolon",
+					"name": "FTLCONF_dns_upstreams",
 					"preset": true
 				}
 			],
@@ -334,6 +413,7 @@
 			],
 			"network": "bridge",
 			"restart_policy": "unless-stopped",
+  			"hostname": "rpi-pihole",
 			"title": "Pi-Hole-Unbound",
 			"type": 1,
 			"volumes": [
@@ -406,6 +486,7 @@
 			],
 			"network": "bridge",
 			"restart_policy": "unless-stopped",
+  			"hostname": "rpi-snippetbox",
 			"title": "Snippet-box",
 			"type": 1,
 			"volumes": [
