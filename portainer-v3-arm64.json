@@ -288,6 +288,16 @@
 			"description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole. This version has Ubound software installed on it so you don't need to rely on external DNS providers.",
 			"env": [
 				{
+					"default": "1000",
+					"label": "GID",
+					"name": "GID"
+				},
+				{
+					"default": "1000",
+					"label": "UID",
+					"name": "UID"
+				},
+				{
 					"default": "Europe/Zurich",
 					"label": "Timezone",
 					"name": "TZ"
@@ -404,9 +414,11 @@
 			"type": 1,
 			"volumes": [
 				{
+					"bind": "/portainer/Files/AppData/Config/PiHole-Unbound",
 					"container": "/etc/pihole"
 				},
 				{
+					"bind": "/portainer/Files/AppData/Config/PiHole-Unbound/DNS",
 					"container": "/etc/dnsmasq.d"
 				}
 			]
