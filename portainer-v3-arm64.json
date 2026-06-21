@@ -88,6 +88,33 @@
 			"image": "influxdb:2",
 			"name": "influxdb2",
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/influxdb.png",
+			"env": [
+				{
+					"default": "setup",
+					"label": "Initial mode",
+					"name": "DOCKER_INFLUXDB_INIT_MODE"
+				},
+				{
+					"default": "",
+					"label": "Initial username",
+					"name": "DOCKER_INFLUXDB_INIT_USERNAME"
+				},
+				{
+					"default": "",
+					"label": "Initial password",
+					"name": "DOCKER_INFLUXDB_INIT_PASSWORD"
+				},
+				{
+					"default": "",
+					"label": "Initial organisation",
+					"name": "DOCKER_INFLUXDB_INIT_ORG"
+				},
+				{
+					"default": "",
+					"label": "Initial bucket",
+					"name": "DOCKER_INFLUXDB_INIT_BUCKET"
+				}
+			],
 			"network": "bridge",
 			"volumes": [
 				{
