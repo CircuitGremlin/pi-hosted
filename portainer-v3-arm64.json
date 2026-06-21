@@ -93,6 +93,16 @@
 					"default": "setup",
 					"label": "Initial mode",
 					"name": "DOCKER_INFLUXDB_INIT_MODE"
+				},
+				{
+					"default": "",
+					"label": "Initial username",
+					"name": "DOCKER_INFLUXDB_INIT_USERNAME"
+				},
+				{
+					"default": "",
+					"label": "Initial password",
+					"name": "DOCKER_INFLUXDB_INIT_PASSWORD"
 				}
 			],
 			"network": "bridge",
