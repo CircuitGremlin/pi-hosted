@@ -448,7 +448,7 @@
 		},
 		{
 			"type": 2,
-			"title": "Tailscale",
+			"title": "tailscale",
 			"description": "Connect your devices and users together in your own secure Zero config virtual private network. ",
 			"repository": {
 				"stackfile": "stack/tailscale.yml",
