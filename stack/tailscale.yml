@@ -5,7 +5,6 @@ services:
     container_name: Tailscale
     cap_add:
       - NET_ADMIN
-      - NET_RAW
       - SYS_MODULE
     environment:
 #      - TS_HOSTNAME=${TS_HOSTNAME} # Usually not necessary for your hostname to be the same name on the tailscale network
