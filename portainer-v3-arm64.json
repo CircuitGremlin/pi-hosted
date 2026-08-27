@@ -445,6 +445,47 @@
 				"Other",
 				"Tools"
 			]
+		},
+		{
+			"type": 1,
+			"title": "Tailscale",
+			"description": "Connect your devices and users together in your own secure Zero config virtual private network. ",
+			"image": "tailscale/tailscale:latest",
+			"name": "Tailscale",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/tailscale.png",
+			"command": "tailscale up --authkey=$AUTH_KEY",
+			"env": [
+				{
+					"default": "",
+					"description": "Get auth key from your tailscale.com user panel",
+					"label": "Auth key",
+					"name": "TS_AUTHKEY"
+				},
+				{
+					"default": "/var/lib/tailscale",
+					"description": "Directory where the state of tailscaled is stored. This needs to persist across container restarts.",
+					"label": "State directory",
+					"name": "TS_STATE_DIR"
+				}
+			],
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/tailscale",
+					"container": "/var/lib/tailscale"
+				},
+				{
+					"bind": "/dev/net/tun",
+					"container": "/dev/net/tun"
+				}
+			],
+			"restart_policy": "unless-stopped",
+			"hostname": "rpi-tailscale",
+			"note": "<h4>Official Webpage: <a href=\"https://tailscale.com/\" target=\"_blank\">https://tailscale.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://hub.docker.com/r/tailscale/tailscale\" target=\"_blank\">https://hub.docker.com/r/tailscale/tailscale</a></h4>",
+			"platform": "linux",
+			"categories": [
+				"Other",
+				"VPN"
+			]
 		}
 	]
 }
