@@ -464,7 +464,7 @@
 					"name": "TS_SOCKET"
 				},
 				{
-					"default": "/var/lib/tailscale/tailscaled.sock",
+					"default": "",
 					"description": "Add any other supported arguments in the docker commandline style: e.g. --advertise-exit-node",
 					"label": "Extra arguments",
 					"name": "TS_EXTRA_ARGS"
