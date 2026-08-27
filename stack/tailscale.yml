@@ -6,7 +6,7 @@ services:
     cap_add:
       - NET_ADMIN
       - NET_RAW
-      - SYS-MODULE
+      - SYS_MODULE
     environment:
 #      - TS_HOSTNAME=${TS_HOSTNAME} # Usually not necessary for your hostname to be the same name on the tailscale network
 #      - TS_AUTHKEY=${TS_AUTHKEY} # Generate auth keys here: https://login.tailscale.com/admin/settings/keys
