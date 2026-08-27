@@ -458,44 +458,7 @@
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/tailscale.png",
 			"env": [
 				{
-					"default": "",
-					"description": "Add any other supported arguments in the docker commandline style: e.g. --advertise-exit-node",
-					"label": "Extra arguments",
-					"name": "TS_EXTRA_ARGS"
-				},
-				{
-					"default": "/var/lib/tailscale",
-					"description": "Directory where the state of tailscaled is stored. This needs to persist across container restarts.",
-					"label": "State directory",
-					"name": "TS_STATE_DIR"
-				}
-			],
-			"note": "<h4>Official Webpage: <a href=\"https://tailscale.com/\" target=\"_blank\">https://tailscale.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://hub.docker.com/r/tailscale/tailscale\" target=\"_blank\">https://hub.docker.com/r/tailscale/tailscale</a></h4>",
-			"platform": "linux",
-			"categories": [
-				"Other",
-				"VPN"
-			]
-		},
-		{
-			"type": 3,
-			"title": "Tailscale Bak",
-			"description": "Connect your devices and users together in your own secure Zero config virtual private network. ",
-			"repository": {
-				"stackfile": "stack/tailscale.yml",
-				"url": "https://github.com/CircuitGremlin/pi-hosted"
-			},
-			"name": "tailscale",
-			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/tailscale.png",
-			"env": [
-				{
-					"default": "/var/lib/tailscale/tailscaled.sock",
-					"description": "Specifying the /var/lib/tailscale/tailscaled.sock location allows use of standard Tailscale commands",
-					"label": "Socket location",
-					"name": "TS_SOCKET"
-				},
-				{
-					"default": "",
+					"default": "--accept-dns=false",
 					"description": "Add any other supported arguments in the docker commandline style: e.g. --advertise-exit-node",
 					"label": "Extra arguments",
 					"name": "TS_EXTRA_ARGS"
