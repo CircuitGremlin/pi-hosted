@@ -447,19 +447,27 @@
 			]
 		},
 		{
-			"type": 1,
+			"type": 2,
 			"title": "Tailscale",
 			"description": "Connect your devices and users together in your own secure Zero config virtual private network. ",
-			"image": "tailscale/tailscale:latest",
+			"repository": {
+				"stackfile": "stack/tailscale.yml",
+				"url": "https://github.com/CircuitGremlin/pi-hosted"
+			},
 			"name": "Tailscale",
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/tailscale.png",
-			"command": "tailscale up --authkey=$AUTH_KEY",
 			"env": [
 				{
-					"default": "",
-					"description": "Get auth key from your tailscale.com user panel",
-					"label": "Auth key",
-					"name": "TS_AUTHKEY"
+					"default": "/var/lib/tailscale/tailscaled.sock",
+					"description": "Specifying the /var/lib/tailscale/tailscaled.sock location allows use of standard Tailscale commands",
+					"label": "Socket location",
+					"name": "TS_SOCKET"
+				},
+				{
+					"default": "/var/lib/tailscale/tailscaled.sock",
+					"description": "Add any other supported arguments in the docker commandline style: e.g. --advertise-exit-node",
+					"label": "Extra arguments",
+					"name": "TS_EXTRA_ARGS"
 				},
 				{
 					"default": "/var/lib/tailscale",
@@ -468,18 +476,6 @@
 					"name": "TS_STATE_DIR"
 				}
 			],
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/tailscale",
-					"container": "/var/lib/tailscale"
-				},
-				{
-					"bind": "/dev/net/tun",
-					"container": "/dev/net/tun"
-				}
-			],
-			"restart_policy": "unless-stopped",
-			"hostname": "rpi-tailscale",
 			"note": "<h4>Official Webpage: <a href=\"https://tailscale.com/\" target=\"_blank\">https://tailscale.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://hub.docker.com/r/tailscale/tailscale\" target=\"_blank\">https://hub.docker.com/r/tailscale/tailscale</a></h4>",
 			"platform": "linux",
 			"categories": [
