@@ -139,6 +139,37 @@
 			]
 		},
 		{
+			"type": 3,
+			"title": "LAN Orangutan",
+			"description": "Scan your networks, discover devices, label and track them — all from a clean web UI or CLI. One binary, almost no configuration, running in seconds.",
+			"repository": {
+				"stackfile": "stack/lan-orangutan.yml",
+				"url": "https://github.com/CircuitGremlin/pi-hosted"
+			},
+			"name": "lan-orangutan",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/lan-orangutan.png",
+			"env": [
+				{
+					"default": "291",
+					"description": "Port to listen on (default 291)",
+					"label": "Port",
+					"name": "ORANGUTAN_PORT"
+				},
+				{
+					"default": "CEST",
+					"description": "Container timezone",
+					"label": "Timezone",
+					"name": "TZ"
+				}
+			],
+			"note": "<h4>Official Webpage: <a href=\"https://lanorangutan.com/\" target=\"_blank\">https://lanorangutan.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://hub.docker.com/r/291group/lan-orangutan\" target=\"_blank\">https://hub.docker.com/r/291group/lan-orangutan</a></h4>",
+			"platform": "linux",
+			"categories": [,
+				"Tools",
+				"Monitor"
+			]
+		},
+		{
 			"type": 1,
 			"title": "MariaDB",
 			"description": "An Enhanced drop in replacement for Mysql",
@@ -449,7 +480,7 @@
 		{
 			"type": 3,
 			"title": "Tailscale",
-			"description": "Connect your devices and users together in your own secure Zero config virtual private network. ",
+			"description": "Connect your devices and users together in your own secure Zero config virtual private network.",
 			"repository": {
 				"stackfile": "stack/tailscale.yml",
 				"url": "https://github.com/CircuitGremlin/pi-hosted"
