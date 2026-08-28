@@ -1,8 +1,9 @@
 services:
   netalertx:
     container_name: netalertx
+    image: jokobsk/netalertx:latest
     # Use this line for stable release
-    image: "ghcr.io/netalertx/netalertx:latest"
+    #image: "ghcr.io/netalertx/netalertx:latest"
     # Or, use this for the latest development build
     # image: "ghcr.io/netalertx/netalertx-dev:latest"
     network_mode: "host"
@@ -25,5 +26,6 @@ services:
       # All writable runtime state resides under /tmp; comment out to persist logs between restarts
       - "/tmp:uid=20211,gid=20211,mode=1700,rw,noexec,nosuid,nodev,async,noatime,nodiratime"
     environment:
-      - PORT=${PORT}
-      - APP_CONF_OVERRIDE=${APP_CONF_OVERRIDE}
+      #- PORT=${PORT}
+      - PORT=22022
+      #- APP_CONF_OVERRIDE=${APP_CONF_OVERRIDE}
