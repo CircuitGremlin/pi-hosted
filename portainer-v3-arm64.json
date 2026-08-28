@@ -164,7 +164,7 @@
 			],
 			"note": "<h4>Official Webpage: <a href=\"https://lanorangutan.com/\" target=\"_blank\">https://lanorangutan.com/</a></h4><h4>Official Docker Documentation: <a href=\"https://hub.docker.com/r/291group/lan-orangutan\" target=\"_blank\">https://hub.docker.com/r/291group/lan-orangutan</a></h4>",
 			"platform": "linux",
-			"categories": [,
+			"categories": [
 				"Tools",
 				"Monitor"
 			]
