@@ -1,0 +1,29 @@
+services:
+  netalertx:
+    container_name: netalertx
+    # Use this line for stable release
+    image: "ghcr.io/netalertx/netalertx:latest"
+    # Or, use this for the latest development build
+    # image: "ghcr.io/netalertx/netalertx-dev:latest"
+    network_mode: "host"
+    restart: unless-stopped
+    cap_drop:       # Drop all capabilities for enhanced security
+      - ALL
+    cap_add:        # Re-add necessary capabilities
+      - NET_RAW
+      - NET_ADMIN
+      - NET_BIND_SERVICE
+      - CHOWN
+      - SETUID
+      - SETGID
+    volumes:
+      - /portainer/Files/AppData/Config/netalertx/config:/data/config
+      - /portainer/Files/AppData/Config/netalertx/db:/data/db
+      # to sync with system time
+      - /etc/localtime:/etc/localtime:ro
+    tmpfs:
+      # All writable runtime state resides under /tmp; comment out to persist logs between restarts
+      - "/tmp:uid=20211,gid=20211,mode=1700,rw,noexec,nosuid,nodev,async,noatime,nodiratime"
+    environment:
+      - PORT=${PORT}
+      - APP_CONF_OVERRIDE=${APP_CONF_OVERRIDE}
