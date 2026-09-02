@@ -503,6 +503,74 @@
 			]
 		},
 		{
+			"type": 1,
+			"title": "Speedtest Tracker",
+			"description": "Speedtest Tracker is a self-hosted application that monitors the performance and uptime of your internet connection.",
+			"image": "linuxserver/speedtest-tracker:latest",
+			"name": "speedtest-tracker",
+			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/speedtest-tracker.png",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "Europe/Zurich",
+					"label": "Timezone",
+					"name": "TZ"
+				},
+				{
+					"default": "",
+					"label": "App key",
+					"name": "APP_KEY"
+				},
+				{
+					"default": "",
+					"label": "App URL",
+					"name": "APP_URL"
+				},
+				{
+					"default": "sqlite",
+					"label": "DB connection",
+					"name": "DB_CONNECTION"
+				},
+				{
+					"default": "0 */6 * * *",
+					"label": "Speedtest shedule",
+					"name": "SPEEDTEST_SCHEDULE"
+				},
+				{
+					"default": "",
+					"label": "Speedtest servers",
+					"name": "SPEEDTEST_SERVERS"
+				}
+			],
+			"network": "bridge",
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/speedtest-tracker/data",
+					"container": "/config"
+				}
+			],
+			"ports": [
+				"8080:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"hostname": "speedtest-tracker",
+			"note": "<h4>Official Webpage: <a href=\"https://github.com/alexjustesen/speedtest-tracker\" target=\"_blank\">https://github.com/alexjustesen/speedtest-tracker</a></h4><h4>Official Docker Documentation: <a href=\"https://hub.docker.com/r/linuxserver/speedtest-tracker\" target=\"_blank\">https://hub.docker.com/r/linuxserver/speedtest-tracker</a></h4>",
+			"platform": "linux",
+			"categories": [
+				"Monitor",
+				"Tools"
+			]
+		},
+		{
 			"type": 3,
 			"title": "Tailscale",
 			"description": "Connect your devices and users together in your own secure Zero config virtual private network.",
