@@ -546,9 +546,14 @@
 					"name": "SPEEDTEST_SCHEDULE"
 				},
 				{
-					"default": "",
+					"default": "16497,30002,68587,3821",
 					"label": "Speedtest servers",
 					"name": "SPEEDTEST_SERVERS"
+				},
+				{
+					"default": "eth1",
+					"label": "Speedtest interface",
+					"name": "SPEEDTEST_INTERFACE"
 				}
 			],
 			"network": "bridge",
