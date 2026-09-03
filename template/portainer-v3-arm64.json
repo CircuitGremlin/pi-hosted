@@ -506,7 +506,7 @@
 			"type": 1,
 			"title": "Speedtest Tracker",
 			"description": "Speedtest Tracker is a self-hosted application that monitors the performance and uptime of your internet connection.",
-			"image": "linuxserver/speedtest-tracker:latest",
+			"image": "lscr.io/linuxserver/speedtest-tracker:latest",
 			"name": "speedtest-tracker",
 			"logo": "https://raw.githubusercontent.com/CircuitGremlin/pi-hosted/master/images/speedtest-tracker.png",
 			"env": [
