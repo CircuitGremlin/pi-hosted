@@ -526,12 +526,22 @@
 					"name": "TZ"
 				},
 				{
-					"default": "",
+					"default": "Europe/Zurich",
+					"label": "Display timezone",
+					"name": "DISPLAY_TIMEZONE"
+				},
+				{
+					"default": "j M Y, G:i:s",
+					"label": "Datetime format",
+					"name": "DATETIME_FORMAT"
+				},
+				{
+					"default": "base64:h5kGt...",
 					"label": "App key",
 					"name": "APP_KEY"
 				},
 				{
-					"default": "",
+					"default": "http://serverpi:8072",
 					"label": "App URL",
 					"name": "APP_URL"
 				},
@@ -541,17 +551,17 @@
 					"name": "DB_CONNECTION"
 				},
 				{
-					"default": "0 */6 * * *",
+					"default": "39 * * * *",
 					"label": "Speedtest shedule",
 					"name": "SPEEDTEST_SCHEDULE"
 				},
 				{
-					"default": "16497,30002,68587,3821",
+					"default": "16497,30002,3821",
 					"label": "Speedtest servers",
 					"name": "SPEEDTEST_SERVERS"
 				},
 				{
-					"default": "eth1",
+					"default": "eth0",
 					"label": "Speedtest interface",
 					"name": "SPEEDTEST_INTERFACE"
 				}
@@ -564,7 +574,7 @@
 				}
 			],
 			"ports": [
-				"8080:80/tcp"
+				"8072:80/tcp"
 			],
 			"restart_policy": "unless-stopped",
 			"hostname": "speedtest-tracker",
